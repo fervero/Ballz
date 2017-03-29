@@ -1,24 +1,65 @@
-$color-bkg: silver;
-$color1: red;
-$color2: orange;
-$color3: yellow;
-$color4: blue;
-$color5: indigo;
+$main-bkg: #001242;
+$main-color: #f34213;
+$secondary-color: #fffcf2;
+$color-bkg: #D72483;
+$color-bkg: #792359;
 $width: 50rem;
 $outerwidth: 60rem;
 $height: 30rem;
 
+$color1: $main-color;
+$color2: #08a045;
+$color3: #f0c808;
+$color4: #0267c1;
+$color5: #fb3640;
+$color6: #dd1c1a;
+$color7: #06D6A0;
+$color8: #355834;
+
 html {
-    font-family: sans-serif;
+    background-color: $main-bkg;
+    color: $main-color;
+    font-family: 'Dosis', sans-serif;
 }
 
 main {
     position: relative;
-    margin: 3rem 0 0 5rem;
+    margin: 2rem auto;
     width: $width;
     height: $height;
     background: $color-bkg;
     overflow: hidden;
+}
+
+h1 {
+    font-size: 250%;
+    margin: 2em auto 0.5em;
+    text-align: center;
+    transform: rotate(9deg);
+    outline: 2px dashed $secondary-color;
+}
+
+.subtitle {
+    display: block;
+    text-align: center;
+    width: 6em;
+    margin: 0 auto 1rem;
+    background-color: $secondary-color;
+    transform: rotate(-5deg);
+    font-size: 200%;
+}
+
+button {
+    background-color: $main-color;
+    color: $secondary-color;
+    margin: 1rem auto;
+    font-size: 400%;
+    transform: rotate(-7deg);
+    cursor: pointer;
+    display: block;
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
+    padding: 0.2em 0.7em;
 }
 
 .c1 {
@@ -35,6 +76,33 @@ main {
 }
 .c5 {
     background-color: $color5;
+}
+.c6 {
+    background-color: $color6;
+}
+
+.c7 {
+    background-color: $color7;
+}
+.c8 {
+    background-color: $color8;    
+}
+
+.zoooom {
+    animation: zooooom 1s 1;    
+}
+
+@keyframes zooooom {
+    from {
+        transform: rotate(-5deg) scale(1);
+    }
+    50% {
+        transform: rotate(-5deg) scale(1.6);
+        
+    }
+    to {
+        transform: rotate(-5deg) scale(1);
+    }
 }
 
 @keyframes upndown {
@@ -91,17 +159,17 @@ main {
 @keyframes disappeard {
     from {
         opacity: 1;
+        transform: rotate(0deg) scale(1);
     }
     to {
         opacity: 0;
-        transform: scale(2, 2);
+        transform: rotate(360deg) scale(3);
     }
 }
 
-
 .ball {
     border-radius: 50%;
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     width: 5rem;
     height: 5rem;
 }
@@ -112,29 +180,51 @@ main {
 }
 
 .fast {
-    animation-duration: 1s, 1.1s, 1.5s, .6s;    
-}
-.slow {
-    animation-duration: 1s, 3s, 1.5s, .6s;    
+    animation-duration: 1s, 1.3s, 1.5s, 1.5s;
 }
 .medium {
-    animation-duration: 1s, 6.3s, 1.5s, .6s;    
+    animation-duration: 1s, 3s, 1.5s, 1.5s;    
+}
+.slow {
+    animation-duration: 1s, 6.3s, 1.5s, 1.5s;    
 }
 
 .bouncy {
+    border: 2px solid rgba(0,0,0,0.2);
     background-clip: content-box;
-    padding: 3rem;
     cursor: pointer;
     position: absolute;
     animation-name: upndown, leftnrite, roundnround;
-    animation-timing-function: linear, linear, linear, ease-in-out;
+    animation-timing-function: linear, linear, linear, ease-in;
     animation-direction: alternate, alternate, normal;
     animation-iteration-count: infinite, infinite, infinite, 1;
-    //animation-duration: 1s, 3s, 1.5s, .6s;
-    animation-fill-mode: none, none, both, both;    
+    animation-fill-mode: none, none, both, both;
+    &:after {
+        content: '';
+        padding: 3rem;
+    }
 }
 
 .smashed {
     cursor: default;
     animation-name: upndown, leftnrite, roundnround, disappeard;
+}
+
+@media (max-width: 30rem) {
+    width: 25rem;
+    height: 18rem;
+}
+
+@media (max-width: 40rem) {
+    main {
+        width: 30rem;
+        height: 20rem;
+    }
+}
+
+@media  (max-width: 50rem) {
+    main {
+        width: 40rem;
+        height: 27rem;
+    }
 }
