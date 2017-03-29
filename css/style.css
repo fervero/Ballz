@@ -1,0 +1,101 @@
+html {
+  font-family: sans-serif; }
+
+main {
+  position: relative;
+  margin: 3rem 0 0 5rem;
+  width: 50rem;
+  height: 30rem;
+  background: silver;
+  overflow: hidden; }
+
+.c1 {
+  background-color: red; }
+
+.c2 {
+  background-color: orange; }
+
+.c3 {
+  background-color: yellow; }
+
+.c4 {
+  background-color: blue; }
+
+.c5 {
+  background-color: indigo; }
+
+@keyframes upndown {
+  from {
+    bottom: 10em; }
+  10% {
+    bottom: 9.9em; }
+  20% {
+    bottom: 9.6em; }
+  30% {
+    bottom: 9.1em; }
+  40% {
+    bottom: 8.4em; }
+  50% {
+    bottom: 7.5em; }
+  60% {
+    bottom: 6.4em; }
+  70% {
+    bottom: 5.1em; }
+  80% {
+    bottom: 3.6em; }
+  90% {
+    bottom: 1.9em; }
+  to {
+    bottom: 0em; } }
+@keyframes leftnrite {
+  from {
+    left: -10rem; }
+  to {
+    left: 60rem; } }
+@keyframes roundnround {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+@keyframes disappeard {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    transform: scale(2, 2); } }
+.ball {
+  border-radius: 50%;
+  font-size: 2.5rem;
+  width: 5rem;
+  height: 5rem; }
+
+.square {
+  font-size: 2.5rem;
+  width: 5rem;
+  height: 5rem; }
+
+.fast {
+  animation-duration: 1s, 1.1s, 1.5s, .6s; }
+
+.slow {
+  animation-duration: 1s, 3s, 1.5s, .6s; }
+
+.medium {
+  animation-duration: 1s, 6.3s, 1.5s, .6s; }
+
+.bouncy {
+  background-clip: content-box;
+  padding: 3rem;
+  cursor: pointer;
+  position: absolute;
+  animation-name: upndown, leftnrite, roundnround;
+  animation-timing-function: linear, linear, linear, ease-in-out;
+  animation-direction: alternate, alternate, normal;
+  animation-iteration-count: infinite, infinite, infinite, 1;
+  animation-fill-mode: none, none, both, both; }
+
+.smashed {
+  cursor: default;
+  animation-name: upndown, leftnrite, roundnround, disappeard; }
+
+/*# sourceMappingURL=style.css.map */
