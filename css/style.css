@@ -9,11 +9,12 @@ main {
   width: 50rem;
   height: 30rem;
   background: #792359;
-  overflow: hidden; }
+  overflow: hidden;
+  max-width: 100%; }
 
 h1 {
   font-size: 250%;
-  margin: 2em auto 0.5em;
+  margin: 1em auto 0.5em;
   text-align: center;
   transform: rotate(9deg);
   outline: 2px dashed #fffcf2; }
@@ -40,37 +41,63 @@ button {
   padding: 0.2em 0.7em; }
 
 .c1 {
-  background-color: #f34213; }
+  background-color: #f34213;
+  border-color: #f34213; }
 
 .c2 {
-  background-color: #08a045; }
+  background-color: #08a045;
+  border-color: #08a045; }
 
 .c3 {
-  background-color: #f0c808; }
+  background-color: #f0c808;
+  border-color: #f0c808; }
 
 .c4 {
-  background-color: #0267c1; }
+  background-color: #0267c1;
+  border-color: #0267c1; }
 
 .c5 {
-  background-color: #fb3640; }
+  background-color: #fb3640;
+  border-color: #fb3640; }
 
 .c6 {
-  background-color: #dd1c1a; }
+  background-color: #dd1c1a;
+  border-color: #dd1c1a; }
 
 .c7 {
-  background-color: #06D6A0; }
+  background-color: #06D6A0;
+  border-color: #06D6A0; }
 
 .c8 {
-  background-color: #355834; }
+  background-color: #355834;
+  border-color: #355834; }
 
-.zoooom {
-  animation: zooooom 1s 1; }
+.ball {
+  border-radius: 50%;
+  font-size: 2.7rem;
+  width: 5rem;
+  height: 5rem; }
+
+.square {
+  font-size: 2.5rem;
+  width: 5rem;
+  height: 5rem; }
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 5rem 5rem 5rem;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  border-left-color: transparent; }
 
 @keyframes zooooom {
   from {
     transform: rotate(-5deg) scale(1); }
   50% {
-    transform: rotate(-5deg) scale(1.6); }
+    transform: rotate(4deg) scale(2.5);
+    box-shadow: 0px 0px 24px 8px #f7c331; }
   to {
     transform: rotate(-5deg) scale(1); } }
 @keyframes upndown {
@@ -112,29 +139,21 @@ button {
     transform: rotate(0deg) scale(1); }
   to {
     opacity: 0;
-    transform: rotate(360deg) scale(3); } }
-.ball {
-  border-radius: 50%;
-  font-size: 2.7rem;
-  width: 5rem;
-  height: 5rem; }
-
-.square {
-  font-size: 2.5rem;
-  width: 5rem;
-  height: 5rem; }
+    transform: rotate(360deg) scale(4); } }
+.zoooom {
+  animation: zooooom 1s 1; }
 
 .fast {
-  animation-duration: 1s, 1.3s, 1.5s, 1.5s; }
+  animation-duration: 1s, 2.2s, 1.5s, 1.5s; }
 
 .medium {
-  animation-duration: 1s, 3s, 1.5s, 1.5s; }
+  animation-duration: 1s, 3.2s, 1.5s, 1.5s; }
 
 .slow {
-  animation-duration: 1s, 6.3s, 1.5s, 1.5s; }
+  animation-duration: 1s, 4.7s, 1.5s, 1.5s; }
 
 .bouncy {
-  border: 2px solid rgba(0, 0, 0, 0.2);
+  padding: 1rem;
   background-clip: content-box;
   cursor: pointer;
   position: absolute;
@@ -143,17 +162,15 @@ button {
   animation-direction: alternate, alternate, normal;
   animation-iteration-count: infinite, infinite, infinite, 1;
   animation-fill-mode: none, none, both, both; }
-  .bouncy:after {
-    content: '';
-    padding: 3rem; }
 
 .smashed {
   cursor: default;
   animation-name: upndown, leftnrite, roundnround, disappeard; }
 
 @media (max-width: 30rem) {
-  width: 25rem;
-  height: 18rem; }
+  main {
+    width: 25rem;
+    height: 18rem; } }
 @media (max-width: 40rem) {
   main {
     width: 30rem;
